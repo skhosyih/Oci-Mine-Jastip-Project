@@ -31,11 +31,11 @@ mealFee = fullMealFee/ 5
 with st.form("my_calculator"):
     st.title("## Enter the Product Amount")
     myProductAmount = st.number_input('myProductAmount')
-    jastipFee = percentageJastipFee * priceProduct
     submit = st.form_submit_button('Calculate!')
     
 if submit:
-    st.write(f'{myProductAmount + jastipFee + transportFee + mealFee}')
+    jastipFee = percentageJastipFee * priceProduct
+    st.write(f'{myProductAmount + jastipFee + transportFee + mealFee:.2f}')
     st.write("Here's the detail")
     st.write()
     st.write("Price Product: ", priceProduct)
