@@ -34,7 +34,8 @@ with st.form("my_calculator"):
     
 if submit:
     jastipFee = myJastipFeePercentage * myProductAmount
-    st.write(f'The total is: Rp{myProductAmount + jastipFee + packaging + transportFee + mealFee:.2f}')
+    result = myProductAmount + jastipFee + packaging + transportFee + mealFee
+    st.write("The total is: Rp", result)
     st.write("Here's the detail")
     st.write()
     st.write("Product Name: ", myProductName)
