@@ -38,7 +38,6 @@ if submit:
     st.write("Here's the detail")
     st.write()
     st.write("Product Name: ", myProductName)
-    st.write(f'Product Amount: Rp{myProductAmount:.1f}')
     st.write("Product Amount: Rp", myProductAmount)
     st.write("Jastip Fee: Rp", jastipFee)
     st.write("Packaging: Rp", packaging)
