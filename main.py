@@ -18,7 +18,6 @@ st.write("An interesting entrusted service project initiated by two people, Oci 
 priceProduct = 0
 
 percentageJastipFee = 0.1
-jastipFee = percentageJastipFee * priceProduct
 
 packaging = 0
 
@@ -32,6 +31,7 @@ mealFee = fullMealFee/ 5
 with st.form("my_calculator"):
     st.title("## Enter the Product Amount")
     myProductAmount = st.number_input('myProductAmount')
+    jastipFee = percentageJastipFee * priceProduct
     submit = st.form_submit_button('Calculate!')
     
 if submit:
