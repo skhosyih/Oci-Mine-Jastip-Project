@@ -26,7 +26,7 @@ mealFee = fullMealFee/ 5
 
 # The form
 with st.form("my_calculator"):
-    st.subheader("Enter the Product Amount & Jastip Fee Percentage")
+    st.subheader("Enter the Product Description")
     myProductName = st.text_input("Product Name")
     myProductAmount = st.number_input('Product Amount')
     myJastipFeePercentage = st.number_input('Jastip Fee Percentage', min_value=0.1, max_value=0.3)
