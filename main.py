@@ -16,9 +16,6 @@ st.write("An interesting entrusted service project initiated by two people, Oci 
 
 # Enter the initial price product amount and initial other variables
 priceProduct = 0
-
-percentageJastipFee = 0.1
-
 packaging = 0
 
 fullTransportFee = 40000
@@ -29,17 +26,21 @@ mealFee = fullMealFee/ 5
 
 # The form
 with st.form("my_calculator"):
-    st.subheader("Enter the Product Amount")
-    myProductAmount = st.number_input('myProductAmount')
+    st.subheader("Enter the Product Amount & Jastip Fee Percentage")
+    myProductName = st.text_input("Product Name")
+    myProductAmount = st.number_input('Product Amount', format="%i")
+    myJastipFeePercentage = st.number_input('Jastip Fee Percentage', min_value=0.1, max_value=0.3)
     submit = st.form_submit_button('Calculate!')
     
 if submit:
-    jastipFee = percentageJastipFee * myProductAmount
-    st.write(f'{myProductAmount + jastipFee + transportFee + mealFee:.2f}')
+    jastipFee = myJastipFeePercentage * myProductAmount
+    st.write("The total is:")
+    st.write(f'{myProductAmount + jastipFee + packaging + transportFee + mealFee:.2f}')
     st.write("Here's the detail")
     st.write()
-    st.write("Price Product: ", priceProduct)
-    st.write("Jastip Fee: ", jastipFee)
-    st.write("Packaging: ", packaging)
-    st.write("Transport Fee: ", transportFee)
-    st.write("Meal Fee: ", mealFee)
+    st.write("Product Name: ", myProductName)
+    st.write("Product Amount: Rp", myProductAmount)
+    st.write("Jastip Fee: Rp", jastipFee)
+    st.write("Packaging: Rp", packaging)
+    st.write("Transport Fee: Rp", transportFee)
+    st.write("Meal Fee: Rp", mealFee)
